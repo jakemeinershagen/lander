@@ -6,7 +6,7 @@ Basically a clone of lunar lander.
 
 ## MVP:
 - ability to land / crash
-- generate simple terrain with spots to land on
+- simple level terrain
 - ability to limit amount of fuel
 - juice
 	- screen shake
@@ -34,3 +34,4 @@ Basically a clone of lunar lander.
 - varry sizes of landing zones and give points based on landing zone size
 - landing timer
 - settings - key remapping
+- generate unlevel terrain with spots to land on
