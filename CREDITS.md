@@ -5,3 +5,5 @@ Assets:
 	- [8-bit Jupiter, The Bringer of Jollity](https://opengameart.org/content/8-bit-jupiter-the-bringer-of-jollity)
 - [Kenney](https://www.kenney.nl/)
 	- [Platformer Art](https://opengameart.org/content/platformer-art-complete-pack-often-updated)
+- [Chasersgaming](https://opengameart.org/users/chasersgaming)
+	- [Digital Font](https://opengameart.org/content/digital-font)
