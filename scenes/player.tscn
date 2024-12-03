@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://djws51ielo1ar"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_w5whq"]
+[ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5atk"]
+
+[node name="Ship" type="CharacterBody2D"]
+script = ExtResource("1_w5whq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gn1ro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a5atk")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=4 uid="uid://sfk2hemtd6qb"]
+[gd_scene load_steps=5 format=4 uid="uid://sfk2hemtd6qb"]
 
-[ext_resource type="Texture2D" uid="uid://6kft2y8fr8sb" path="res://assets/tiles_spritesheet.png" id="1_ee3e5"]
+[ext_resource type="Texture2D" uid="uid://6kft2y8fr8sb" path="res://assets/tiles_spritesheet.png" id="1_fs4mk"]
+[ext_resource type="PackedScene" uid="uid://djws51ielo1ar" path="res://scenes/player.tscn" id="2_pttrc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqycc"]
-texture = ExtResource("1_ee3e5")
+texture = ExtResource("1_fs4mk")
 separation = Vector2i(2, 2)
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
@@ -179,3 +180,7 @@ sources/1 = SubResource("TileSetAtlasSource_jqycc")
 [node name="TileMap" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AADt/wAAAQALAAIAAADu/wAAAQALAAIAAADv/wAAAQALAAIAAADw/wAAAQALAAIAAADx/wAAAQALAAIAAADy/wAAAQALAAIAAADz/wAAAQALAAIAAAD0/wAAAQALAAIAAAD1/wAAAQALAAIAAAD2/wAAAQALAAIAAAD3/wAAAQALAAIAAAD4/wAAAQALAAIAAAD5/wAAAQALAAIAAAD6/wAAAQALAAIAAAD7/wAAAQALAAIAAAD8/wAAAQALAAIAAAD9/wAAAQALAAIAAAD+/wAAAQALAAIAAAD//wAAAQALAAIAAAAAAAAAAQALAAIAAAABAAAAAQALAAIAAAACAAAAAQALAAIAAAADAAAAAQALAAIAAAAFAAAAAQALAAIAAAAGAAAAAQALAAIAAAAHAAAAAQALAAIAAAAIAAAAAQALAAIAAAAJAAAAAQALAAIAAAAKAAAAAQALAAIAAAALAAAAAQALAAIAAAAMAAAAAQALAAIAAAANAAAAAQALAAIAAAAOAAAAAQALAAIAAAAPAAAAAQALAAIAAAAQAAAAAQALAAIAAAARAAAAAQALAAIAAAASAAAAAQALAAIAAAATAAAAAQALAAIAAAAUAAAAAQALAAIAAAAVAAAAAQALAAIAAAAWAAAAAQALAAIAAAAXAAAAAQALAAIAAAAYAAAAAQALAAIAAAAZAAAAAQALAAIAAAAaAAAAAQALAAIAAAAbAAAAAQALAAIAAAAcAAAAAQALAAIAAAAdAAAAAQALAAIAAAAeAAAAAQALAAIAAAAfAAAAAQALAAIAAAAgAAAAAQALAAIAAAAhAAAAAQALAAIAAAAiAAAAAQALAAIAAAAEAAAAAQALAAIAAAA=")
 tile_set = SubResource("TileSet_p1p78")
+
+[node name="Ship" parent="." instance=ExtResource("2_pttrc")]
+position = Vector2(361, -91)
+scale = Vector2(5, 5)
