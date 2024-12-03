@@ -5,8 +5,10 @@ Basically a clone of lunar lander.
 - basic player controller
 - land generation (should be infinite in width)
 - land / crash state
+- HUD
 - fuel consumption
-- UI
+- Other UI
+- Audio
 - juice
 
 ## MVP:
@@ -19,6 +21,8 @@ Basically a clone of lunar lander.
 	- crash explosion
 	- particle effects
 - UI
+	- HUD
+		- speed (change color if close to crashing speed?)
 	- main menu
 		- start
 		- settings
