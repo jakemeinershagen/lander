@@ -2,7 +2,6 @@
 Basically a clone of lunar lander.
 
 ## To Do:
-- basic player controller
 - land generation (should be infinite in width)
 - land / crash state
 - HUD
