@@ -20,8 +20,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("roll_left", "roll_right")
 	if direction:
 		rotation += direction * ROTATION_SPEED * delta
-	
-	print($Camera2D.zoom)
+
 	if Input.is_action_just_released("zoom_in"):
 		$Camera2D.zoom += ZOOM_INCREMENT
 	if Input.is_action_just_pressed("zoom_out") and $Camera2D.zoom > 2 * ZOOM_INCREMENT:
