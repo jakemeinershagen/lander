@@ -182,5 +182,4 @@ tile_map_data = PackedByteArray("AADt/wAAAQALAAIAAADu/wAAAQALAAIAAADv/wAAAQALAAI
 tile_set = SubResource("TileSet_p1p78")
 
 [node name="Ship" parent="." instance=ExtResource("2_pttrc")]
-position = Vector2(361, -91)
-scale = Vector2(5, 5)
+position = Vector2(363, -185)

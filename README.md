@@ -40,6 +40,7 @@ Basically a clone of lunar lander.
 		- screen shake toggle
 
 ## Ideas:
+- autozoom
 - varry sizes of landing zones and give points based on landing zone size
 - landing timer
 - settings - key remapping

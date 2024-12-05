@@ -9,10 +9,12 @@
 script = ExtResource("1_w5whq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
 texture = ExtResource("2_gn1ro")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_a5atk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.5, 0.5)
