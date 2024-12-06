@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://sfk2hemtd6qb"]
+[gd_scene load_steps=7 format=3 uid="uid://sfk2hemtd6qb"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_3h8ol"]
 [ext_resource type="Texture2D" uid="uid://6kft2y8fr8sb" path="res://assets/tiles_spritesheet.png" id="1_fs4mk"]
 [ext_resource type="PackedScene" uid="uid://djws51ielo1ar" path="res://scenes/player.tscn" id="2_pttrc"]
+[ext_resource type="Script" path="res://scripts/tile_map.gd" id="3_v4ukn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqycc"]
 texture = ExtResource("1_fs4mk")
@@ -176,10 +178,11 @@ physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_jqycc")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_3h8ol")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADt/wAAAQALAAIAAADu/wAAAQALAAIAAADv/wAAAQALAAIAAADw/wAAAQALAAIAAADx/wAAAQALAAIAAADy/wAAAQALAAIAAADz/wAAAQALAAIAAAD0/wAAAQALAAIAAAD1/wAAAQALAAIAAAD2/wAAAQALAAIAAAD3/wAAAQALAAIAAAD4/wAAAQALAAIAAAD5/wAAAQALAAIAAAD6/wAAAQALAAIAAAD7/wAAAQALAAIAAAD8/wAAAQALAAIAAAD9/wAAAQALAAIAAAD+/wAAAQALAAIAAAD//wAAAQALAAIAAAAAAAAAAQALAAIAAAABAAAAAQALAAIAAAACAAAAAQALAAIAAAADAAAAAQALAAIAAAAFAAAAAQALAAIAAAAGAAAAAQALAAIAAAAHAAAAAQALAAIAAAAIAAAAAQALAAIAAAAJAAAAAQALAAIAAAAKAAAAAQALAAIAAAALAAAAAQALAAIAAAAMAAAAAQALAAIAAAANAAAAAQALAAIAAAAOAAAAAQALAAIAAAAPAAAAAQALAAIAAAAQAAAAAQALAAIAAAARAAAAAQALAAIAAAASAAAAAQALAAIAAAATAAAAAQALAAIAAAAUAAAAAQALAAIAAAAVAAAAAQALAAIAAAAWAAAAAQALAAIAAAAXAAAAAQALAAIAAAAYAAAAAQALAAIAAAAZAAAAAQALAAIAAAAaAAAAAQALAAIAAAAbAAAAAQALAAIAAAAcAAAAAQALAAIAAAAdAAAAAQALAAIAAAAeAAAAAQALAAIAAAAfAAAAAQALAAIAAAAgAAAAAQALAAIAAAAhAAAAAQALAAIAAAAiAAAAAQALAAIAAAAEAAAAAQALAAIAAAA=")
 tile_set = SubResource("TileSet_p1p78")
+script = ExtResource("3_v4ukn")
 
 [node name="Ship" parent="." instance=ExtResource("2_pttrc")]
-position = Vector2(363, -185)
+position = Vector2(750, -185)
