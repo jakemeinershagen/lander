@@ -4,6 +4,8 @@ const CHUNK_SIZE = 100
 
 
 func get_chunk_num(x):
+	if x < 0:
+		x -= 100
 	return floor(x / 100)
 
 
