@@ -186,3 +186,47 @@ script = ExtResource("3_v4ukn")
 
 [node name="Ship" parent="." instance=ExtResource("2_pttrc")]
 position = Vector2(750, -185)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="v_vel" type="Label" parent="HUD/Control"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 39.0
+text = "v_vel"
+
+[node name="h_vel" type="Label" parent="HUD/Control"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 56.0
+offset_bottom = 71.0
+text = "h_vel"
+
+[node name="fuel" type="Label" parent="HUD/Control"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 56.0
+offset_bottom = 135.0
+text = "fuel
+"
+
+[node name="altitude" type="Label" parent="HUD/Control"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 77.0
+offset_bottom = 103.0
+text = "altitude"
