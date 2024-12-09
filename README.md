@@ -2,9 +2,8 @@
 Basically a clone of lunar lander.
 
 ## To Do:
-- land generation (should be infinite in width)
-- land / crash state
 - HUD
+- land / crash state
 - fuel consumption
 - Other UI
 - Audio

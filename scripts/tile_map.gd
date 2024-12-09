@@ -15,6 +15,8 @@ func load_chunk(chunk_num):
 	
 	for x in range(left_limit, right_limit):
 		set_cell(Vector2(x, 0), 1, Vector2(11, 2), 0)
+		set_cell(Vector2(x, 1), 1, Vector2(7, 4), 0)
+		set_cell(Vector2(x, 2), 1, Vector2(7, 4), 0)
 
 
 func unload_chunk(chunk_num):
