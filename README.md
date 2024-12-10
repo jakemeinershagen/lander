@@ -2,7 +2,6 @@
 Basically a clone of lunar lander.
 
 ## To Do:
-- HUD
 - land / crash state
 - fuel consumption
 - Other UI

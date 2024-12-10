@@ -8,6 +8,7 @@ const OUTER_LIMIT = 800
 @onready var fuel_lbl = $HUD/Control/fuel
 @onready var alt_lbl = $HUD/Control/altitude
 @onready var tile_map = $TileMap
+@onready var ship = $Ship
 var loaded_chunks = []
 
 
@@ -19,11 +20,13 @@ func _process(delta: float) -> void:
 
 
 func update_hud():
-	pass
+	v_vel_lbl.text = "V VEL: %.1f" % (ship.velocity.y / tile_map.tile_set.tile_size.y)
+	h_vel_lbl.text = "H VEL: %.1f" % abs(ship.velocity.x / tile_map.tile_set.tile_size.x)
+	alt_lbl.text = "ALT: %.1f" % -(ship.position.y / tile_map.tile_set.tile_size.y)
 
 
 func handle_chunks():
-	var ship_pos = floor($Ship.position.x / tile_map.tile_set.tile_size.x)
+	var ship_pos = floor(ship.position.x / tile_map.tile_set.tile_size.x)
 	
 	var left_limit = ship_pos - OUTER_LIMIT
 	var right_limit = ship_pos + OUTER_LIMIT
