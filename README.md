@@ -2,6 +2,7 @@
 Basically a clone of lunar lander.
 
 ## To Do:
+- auto rotate when on ground
 - land / crash state
 - fuel consumption
 - Other UI
