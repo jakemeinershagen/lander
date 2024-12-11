@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://djws51ielo1ar"]
+[gd_scene load_steps=6 format=3 uid="uid://djws51ielo1ar"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w5whq"]
 [ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5atk"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x0l7i"]
+radius = 4.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5aypx"]
+radius = 4.0
+height = 98.0
+
 [node name="Ship" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_w5whq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +27,35 @@ shape = SubResource("RectangleShape2D_a5atk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="SuccessHitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SuccessHitbox"]
+position = Vector2(0, 50)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_x0l7i")
+debug_color = Color(0.7, 0.65625, 0, 0.42)
+
+[node name="FailHitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FailHitbox"]
+position = Vector2(-48, -3)
+shape = SubResource("CapsuleShape2D_5aypx")
+debug_color = Color(0.7, 0, 0, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FailHitbox"]
+position = Vector2(0, -50)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_5aypx")
+debug_color = Color(0.7, 0, 0, 0.42)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="FailHitbox"]
+position = Vector2(48, -3)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_5aypx")
+debug_color = Color(0.7, 0, 0, 0.42)
+
+[connection signal="body_entered" from="SuccessHitbox" to="." method="_on_success_hitbox_body_entered"]
+[connection signal="body_entered" from="FailHitbox" to="." method="_on_fail_hitbox_body_entered"]

@@ -2,7 +2,6 @@
 Basically a clone of lunar lander.
 
 ## To Do:
-- auto rotate when on ground
 - land / crash state
 - fuel consumption
 - Other UI
@@ -37,6 +36,7 @@ Basically a clone of lunar lander.
 		- screen shake toggle
 
 ## Ideas:
+- auto rotate when on ground
 - max velocity
 - autozoom
 - varry sizes of landing zones and give points based on landing zone size
