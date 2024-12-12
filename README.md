@@ -9,7 +9,6 @@ Basically a clone of lunar lander.
 - juice
 
 ## MVP:
-- ability to land / crash
 - ability to limit amount of fuel
 - juice
 	- screen shake
