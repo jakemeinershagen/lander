@@ -23,6 +23,7 @@ func update_hud():
 	v_vel_lbl.text = "V VEL: %.1f" % (ship.velocity.y / tile_map.tile_set.tile_size.y)
 	h_vel_lbl.text = "H VEL: %.1f" % abs(ship.velocity.x / tile_map.tile_set.tile_size.x)
 	alt_lbl.text = "ALT: %.1f" % -(ship.position.y / tile_map.tile_set.tile_size.y)
+	fuel_lbl.text = "FUEL: %.1fL" % ship.fuel if ship.fuel > 0 else "FUEL: 0L"
 
 
 func handle_chunks():

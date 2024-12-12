@@ -7,6 +7,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ZOOM_INCREMENT = 0.01 * Vector2.ONE
 
+@onready var fuel = Globals.fuel
+@onready var roll_fuel_consump = Globals.roll_fuel_consump
+@onready var burn_fuel_consump = Globals.burn_fuel_consump
+
+var game_over = false
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -14,11 +20,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, FRICTION)
 
-	var direction := Input.get_axis("roll_left", "roll_right")
-	if direction:
-		rotation += direction * ROTATION_SPEED * delta
-
-	velocity += ACCEL * Input.get_action_strength("burn") * -transform.y
+	if not game_over and fuel > 0:
+		player_move(delta)
 
 	if Input.is_action_just_released("zoom_in"):
 		$Camera2D.zoom += ZOOM_INCREMENT
@@ -28,11 +31,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func player_move(delta: float):
+	var direction := Input.get_axis("roll_left", "roll_right")
+	if direction:
+		rotation += direction * ROTATION_SPEED * delta
+		fuel -= roll_fuel_consump * delta
+
+	velocity += ACCEL * Input.get_action_strength("burn") * -transform.y
+	if Input.get_action_strength("burn") > 0:
+		fuel -= burn_fuel_consump * delta
+
+
 func _on_success_hitbox_body_entered(body: Node2D) -> void:
-	if body is TileMapLayer:
+	if body is TileMapLayer and velocity.length() / Globals.tile_size.y <= 5.0:
 		print("success")
+		game_over = true
+	elif body is TileMapLayer:
+		print("fail")
+		game_over = true
 
 
 func _on_fail_hitbox_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer:
 		print("fail")
+		game_over = true

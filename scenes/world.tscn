@@ -185,7 +185,7 @@ tile_set = SubResource("TileSet_p1p78")
 script = ExtResource("3_v4ukn")
 
 [node name="Ship" parent="." instance=ExtResource("2_pttrc")]
-position = Vector2(750, -185)
+position = Vector2(784, -1061)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

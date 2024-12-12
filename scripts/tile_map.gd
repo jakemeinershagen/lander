@@ -2,6 +2,9 @@ extends TileMapLayer
 
 const CHUNK_SIZE = 100
 
+func _ready() -> void:
+	Globals.tile_size = tile_set.tile_size
+
 
 func get_chunk_num(x):
 	if x < 0:
