@@ -10,7 +10,6 @@ Basically a clone of lunar lander.
 
 ## MVP:
 - juice
-	- screen shake
 	- engine noise
 	- crash explosion
 	- particle effects
