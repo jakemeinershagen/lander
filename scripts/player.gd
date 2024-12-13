@@ -40,18 +40,20 @@ func player_move(delta: float):
 	velocity += ACCEL * Input.get_action_strength("burn") * -transform.y
 	if Input.get_action_strength("burn") > 0:
 		fuel -= burn_fuel_consump * delta
+		#$Camera2D.add_trauma(0.020)
 
+func fail():
+	$Camera2D.add_trauma(0.9)
+	game_over = true
 
 func _on_success_hitbox_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer and velocity.length() / Globals.tile_size.y <= 5.0:
 		print("success")
 		game_over = true
 	elif body is TileMapLayer:
-		print("fail")
-		game_over = true
-
+		fail()
+		
 
 func _on_fail_hitbox_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer:
-		print("fail")
-		game_over = true
+		fail()

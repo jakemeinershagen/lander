@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://djws51ielo1ar"]
+[gd_scene load_steps=7 format=3 uid="uid://djws51ielo1ar"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w5whq"]
 [ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
+[ext_resource type="PackedScene" uid="uid://djuau7jf58y8d" path="res://scenes/camera_2d_with_shake.tscn" id="3_40gwm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5atk"]
 
@@ -25,8 +26,7 @@ texture = ExtResource("2_gn1ro")
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_a5atk")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+[node name="Camera2D" parent="." instance=ExtResource("3_40gwm")]
 
 [node name="SuccessHitbox" type="Area2D" parent="."]
 collision_layer = 2
