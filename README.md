@@ -10,9 +10,8 @@ Basically a clone of lunar lander.
 
 ## MVP:
 - juice
-	- engine noise
-	- crash explosion
-	- particle effects
+	- crash explosion vfx
+	- engine vfx
 - UI
 	- HUD
 		- speed (change color if close to crashing speed?)
