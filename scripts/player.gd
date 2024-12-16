@@ -48,6 +48,7 @@ func player_move(delta: float):
 func fail():
 	$Camera2D.add_trauma(0.9)
 	$ExplosionSound.play()
+	$ExplosionAndSmoke.start()
 	game_over = true
 
 func _on_success_hitbox_body_entered(body: Node2D) -> void:

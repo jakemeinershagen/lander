@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://djws51ielo1ar"]
+[gd_scene load_steps=10 format=3 uid="uid://djws51ielo1ar"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w5whq"]
 [ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
 [ext_resource type="PackedScene" uid="uid://djuau7jf58y8d" path="res://scenes/camera_2d_with_shake.tscn" id="3_40gwm"]
 [ext_resource type="AudioStream" uid="uid://c7ek38sux54pa" path="res://assets/8bit_bomb_explosion.wav" id="4_741g4"]
 [ext_resource type="AudioStream" uid="uid://v66gwdirybcn" path="res://assets/enginehum3.ogg" id="5_kbci3"]
+[ext_resource type="PackedScene" uid="uid://bc7gmgeuqmbxi" path="res://scenes/explosion_and_smoke.tscn" id="6_k82sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5atk"]
 
@@ -19,6 +20,8 @@ height = 98.0
 [node name="Ship" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_w5whq")
+
+[node name="ExplosionAndSmoke" parent="." instance=ExtResource("6_k82sf")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
