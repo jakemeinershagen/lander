@@ -41,9 +41,11 @@ func player_move(delta: float):
 	if Input.get_action_strength("burn") > 0:
 		fuel -= burn_fuel_consump * delta
 		$EngineSound.play()
+		$ExhaustParticles.emitting = true
 		#$Camera2D.add_trauma(0.020)
 	else:
 		$EngineSound.stop()
+		$ExhaustParticles.emitting = false
 
 func fail():
 	$Camera2D.add_trauma(0.9)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://djws51ielo1ar"]
+[gd_scene load_steps=11 format=3 uid="uid://djws51ielo1ar"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w5whq"]
 [ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
@@ -6,6 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://c7ek38sux54pa" path="res://assets/8bit_bomb_explosion.wav" id="4_741g4"]
 [ext_resource type="AudioStream" uid="uid://v66gwdirybcn" path="res://assets/enginehum3.ogg" id="5_kbci3"]
 [ext_resource type="PackedScene" uid="uid://bc7gmgeuqmbxi" path="res://scenes/explosion_and_smoke.tscn" id="6_k82sf"]
+
+[sub_resource type="Gradient" id="Gradient_bfaky"]
+offsets = PackedFloat32Array(0, 0.473333)
+colors = PackedColorArray(1, 0.703125, 0, 1, 0.289062, 0.289062, 0.289062, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5atk"]
 
@@ -22,6 +26,22 @@ collision_layer = 2
 script = ExtResource("1_w5whq")
 
 [node name="ExplosionAndSmoke" parent="." instance=ExtResource("6_k82sf")]
+
+[node name="ExhaustParticles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 38)
+emitting = false
+amount = 200
+lifetime = 5.0
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, -30)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+scale_amount_min = 18.0
+scale_amount_max = 22.0
+color_ramp = SubResource("Gradient_bfaky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
