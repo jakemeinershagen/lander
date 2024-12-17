@@ -8,7 +8,5 @@ Assets:
 	- [Digital Font](https://opengameart.org/content/digital-font)
 - [CodeManu](https://opengameart.org/users/codemanu)
 	- [Magic Space](https://opengameart.org/content/magic-space)
-- [kurt](https://opengameart.org/users/kurt)
-	- [Engine Sound](https://opengameart.org/content/engine-sound)
 - [Luke.RUSTLTD](https://opengameart.org/users/lukerustltd)
 	- [bomb_explosion_8bit](https://opengameart.org/content/bombexplosion8bit)

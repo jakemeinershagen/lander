@@ -2,15 +2,9 @@
 Basically a clone of lunar lander.
 
 ## To Do:
-- land / crash state
-- fuel consumption
 - Other UI
-- Audio
-- juice
 
 ## MVP:
-- fix audio, better engine noise and setup logic so that you aren't restarting
-it every frame that the burn input is pressed.
 - UI
 	- HUD
 		- speed (change color if close to crashing speed?)

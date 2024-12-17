@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://h01asul4ghhi" path="res://assets/Lunar Lander Only.png" id="2_gn1ro"]
 [ext_resource type="PackedScene" uid="uid://djuau7jf58y8d" path="res://scenes/camera_2d_with_shake.tscn" id="3_40gwm"]
 [ext_resource type="AudioStream" uid="uid://c7ek38sux54pa" path="res://assets/8bit_bomb_explosion.wav" id="4_741g4"]
-[ext_resource type="AudioStream" uid="uid://v66gwdirybcn" path="res://assets/enginehum3.ogg" id="5_kbci3"]
+[ext_resource type="AudioStream" uid="uid://dhymqahfqpqly" path="res://assets/rocket_engine.001.wav" id="6_78qrn"]
 [ext_resource type="PackedScene" uid="uid://bc7gmgeuqmbxi" path="res://scenes/explosion_and_smoke.tscn" id="6_k82sf"]
 
 [sub_resource type="Gradient" id="Gradient_bfaky"]
@@ -86,8 +86,7 @@ debug_color = Color(0.7, 0, 0, 0.42)
 stream = ExtResource("4_741g4")
 
 [node name="EngineSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_kbci3")
-parameters/looping = true
+stream = ExtResource("6_78qrn")
 
 [connection signal="body_entered" from="SuccessHitbox" to="." method="_on_success_hitbox_body_entered"]
 [connection signal="body_entered" from="FailHitbox" to="." method="_on_fail_hitbox_body_entered"]
