@@ -22,6 +22,9 @@ func _physics_process(delta: float) -> void:
 
 	if not game_over and fuel > 0:
 		player_move(delta)
+	else:
+		$EngineSound.stop()
+		$ExhaustParticles.emitting = false
 
 	if Input.is_action_just_released("zoom_in"):
 		$Camera2D.zoom += ZOOM_INCREMENT
@@ -40,7 +43,8 @@ func player_move(delta: float):
 	velocity += ACCEL * Input.get_action_strength("burn") * -transform.y
 	if Input.get_action_strength("burn") > 0:
 		fuel -= burn_fuel_consump * delta
-		$EngineSound.play()
+		if not $EngineSound.playing:
+			$EngineSound.play()
 		$ExhaustParticles.emitting = true
 		#$Camera2D.add_trauma(0.020)
 	else:

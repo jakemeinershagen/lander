@@ -24,7 +24,6 @@ func _process(_delta: float) -> void:
 	if trauma:
 		shake_rand()
 	trauma = lerp(trauma, 0.0, decay)
-	print(trauma)
 
 func add_trauma(amount):
 	trauma = min(trauma + amount, 1.0)

@@ -9,7 +9,6 @@ Basically a clone of lunar lander.
 - juice
 
 ## MVP:
-- fix bug where audio and engine vfx keep going if you land while burning
 - fix audio, better engine noise and setup logic so that you aren't restarting
 it every frame that the burn input is pressed.
 - UI
