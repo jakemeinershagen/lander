@@ -7,6 +7,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ZOOM_INCREMENT = 0.01 * Vector2.ONE
 
+signal landing_success
+signal landing_fail
+
 @onready var fuel = Globals.fuel
 @onready var roll_fuel_consump = Globals.roll_fuel_consump
 @onready var burn_fuel_consump = Globals.burn_fuel_consump
@@ -56,11 +59,12 @@ func fail():
 	$ExplosionSound.play()
 	$ExplosionAndSmoke.start()
 	game_over = true
+	emit_signal("landing_fail")
 
 func _on_success_hitbox_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer and velocity.length() / Globals.tile_size.y <= 5.0:
-		print("success")
 		game_over = true
+		emit_signal("landing_success")
 	elif body is TileMapLayer:
 		fail()
 		

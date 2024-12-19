@@ -1,34 +1,26 @@
 # Lander
 Basically a clone of lunar lander.
 
+Release - Saturday 12/21
+
 ## To Do:
 - Other UI
 
 ## MVP:
 - UI
-	- HUD
-		- speed (change color if close to crashing speed?)
-	- main menu
-		- start
-		- settings
-		- quit
 	- pause menu
-		- main menu
 		- settings
-		- quit
-	- success / crash menu
-		- restart
-		- settings
-		- main menu
 	- settings
 		- volume
-		- screen shake toggle
+		- screen shake toggle - strength modifier?
 
-## Ideas:
+## Backlog:
 - auto rotate when on ground
 - max velocity
+- change hud color based on success speed
 - autozoom
-- varry sizes of landing zones and give points based on landing zone size
+- terrain
+	- generate unlevel terrain with spots to land on
+	- varry sizes of landing zones and give points based on landing zone size
 - landing timer
 - settings - key remapping
-- generate unlevel terrain with spots to land on
