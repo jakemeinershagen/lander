@@ -8,11 +8,10 @@ Release - Saturday 12/21
 
 ## MVP:
 - UI
-	- pause menu
-		- settings
 	- settings
-		- volume
 		- screen shake toggle - strength modifier?
+- fix engine sound looping to not make a tic sound
+- fix warnings
 
 ## Backlog:
 - auto rotate when on ground

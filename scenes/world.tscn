@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://sfk2hemtd6qb"]
+[gd_scene load_steps=10 format=3 uid="uid://sfk2hemtd6qb"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_3h8ol"]
 [ext_resource type="Texture2D" uid="uid://6kft2y8fr8sb" path="res://assets/tiles_spritesheet.png" id="1_fs4mk"]
 [ext_resource type="PackedScene" uid="uid://djws51ielo1ar" path="res://scenes/player.tscn" id="2_pttrc"]
 [ext_resource type="Script" path="res://scripts/tile_map.gd" id="3_v4ukn"]
-[ext_resource type="Script" path="res://scenes/ui.gd" id="5_l224l"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="5_l224l"]
+[ext_resource type="Script" path="res://scripts/volume.gd" id="6_upfhy"]
+[ext_resource type="AudioStream" uid="uid://dhymqahfqpqly" path="res://assets/rocket_engine.001.wav" id="7_kryq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqycc"]
 texture = ExtResource("1_fs4mk")
@@ -289,9 +291,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -35.0
-offset_top = -127.0
+offset_top = -126.0
 offset_right = 35.0
-offset_bottom = -96.0
+offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Resume"
@@ -303,10 +305,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = 79.0
-offset_right = 21.0
-offset_bottom = 110.0
+offset_left = -36.0
+offset_top = 66.0
+offset_right = 6.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
@@ -318,16 +320,98 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -64.0
-offset_right = 32.5
-offset_bottom = -33.0
+offset_left = -36.0
+offset_top = -62.0
+offset_right = 29.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
+
+[node name="Settings" type="Button" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 2.0
+offset_right = 34.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+
+[node name="SettingsMenu" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -152.0
+offset_right = 100.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0730591, 0.278855, 0.519531, 1)
+
+[node name="Back" type="Button" parent="UI/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -44.0
+offset_right = 53.0
+offset_bottom = -13.0
+grow_vertical = 0
+text = "Back"
+
+[node name="Volume" type="HSlider" parent="UI/SettingsMenu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_top = 40.0
+offset_right = -12.0
+offset_bottom = 56.0
+grow_horizontal = 0
+max_value = 1.0
+step = 0.05
+script = ExtResource("6_upfhy")
+
+[node name="TestSound" type="AudioStreamPlayer" parent="UI/SettingsMenu/Volume"]
+stream = ExtResource("7_kryq8")
+
+[node name="VolLabel" type="Label" parent="UI/SettingsMenu"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 48.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 12
+text = "Volume:"
 
 [connection signal="landing_fail" from="Ship" to="UI" method="_on_ship_landing_fail"]
 [connection signal="landing_success" from="Ship" to="UI" method="_on_ship_landing_success"]
 [connection signal="button_up" from="UI/PauseMenu/Resume" to="UI" method="_on_resume_button_up"]
 [connection signal="button_up" from="UI/PauseMenu/Quit" to="UI" method="_on_quit_button_up"]
 [connection signal="button_up" from="UI/PauseMenu/Restart" to="UI" method="_on_restart_button_up"]
+[connection signal="button_up" from="UI/PauseMenu/Settings" to="UI" method="_on_settings_button_up"]
+[connection signal="button_up" from="UI/SettingsMenu/Back" to="UI" method="_on_back_button_up"]
+[connection signal="drag_ended" from="UI/SettingsMenu/Volume" to="UI/SettingsMenu/Volume" method="_on_drag_ended"]
+[connection signal="drag_started" from="UI/SettingsMenu/Volume" to="UI/SettingsMenu/Volume" method="_on_drag_started"]
+[connection signal="value_changed" from="UI/SettingsMenu/Volume" to="UI/SettingsMenu/Volume" method="_on_value_changed"]

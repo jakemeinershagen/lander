@@ -33,3 +33,11 @@ func _on_ship_landing_fail() -> void:
 	$ResultText/Label.text = "Crashed!"
 	$PauseMenu/Resume.visible = false
 	$ResultText.visible = true
+
+
+func _on_settings_button_up() -> void:
+	$SettingsMenu.visible = true
+
+
+func _on_back_button_up() -> void:
+	$SettingsMenu.visible = false
