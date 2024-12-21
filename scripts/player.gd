@@ -59,12 +59,12 @@ func fail():
 	$ExplosionSound.play()
 	$ExplosionAndSmoke.start()
 	game_over = true
-	emit_signal("landing_fail")
+	landing_fail.emit()
 
 func _on_success_hitbox_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer and velocity.length() / Globals.tile_size.y <= 5.0:
 		game_over = true
-		emit_signal("landing_success")
+		landing_success.emit()
 	elif body is TileMapLayer:
 		fail()
 		

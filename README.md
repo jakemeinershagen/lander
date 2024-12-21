@@ -7,7 +7,7 @@ Release - Saturday 12/21
 - Other UI
 
 ## MVP:
-- fix warnings
+DONE!!!!!
 
 ## Backlog:
 - auto rotate when on ground
