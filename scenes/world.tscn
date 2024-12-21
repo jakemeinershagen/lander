@@ -188,7 +188,7 @@ tile_set = SubResource("TileSet_p1p78")
 script = ExtResource("3_v4ukn")
 
 [node name="Ship" parent="." instance=ExtResource("2_pttrc")]
-position = Vector2(784, -10000)
+position = Vector2(784, -5000)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -239,7 +239,6 @@ process_mode = 3
 script = ExtResource("5_l224l")
 
 [node name="ResultText" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -253,9 +252,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -30.0
-offset_top = 233.0
+offset_top = 56.0
 offset_right = 30.0
-offset_bottom = 256.0
+offset_bottom = 144.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 64
 

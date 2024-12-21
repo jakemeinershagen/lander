@@ -16,6 +16,9 @@ signal landing_fail
 
 var game_over = false
 
+#this var is to fix a wtf bug
+var last_velocity = Vector2.ZERO
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -34,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("zoom_out") and $Camera2D.zoom > 2 * ZOOM_INCREMENT:
 		$Camera2D.zoom -= ZOOM_INCREMENT
 
+	last_velocity = velocity
 	move_and_slide()
 
 
@@ -62,7 +66,7 @@ func fail():
 	landing_fail.emit()
 
 func _on_success_hitbox_body_entered(body: Node2D) -> void:
-	if body is TileMapLayer and velocity.length() / Globals.tile_size.y <= 5.0:
+	if body is TileMapLayer and last_velocity.length() / Globals.tile_size.y <= 5.0:
 		game_over = true
 		landing_success.emit()
 	elif body is TileMapLayer:
