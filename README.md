@@ -7,10 +7,6 @@ Release - Saturday 12/21
 - Other UI
 
 ## MVP:
-- UI
-	- settings
-		- screen shake toggle - strength modifier?
-- fix engine sound looping to not make a tic sound
 - fix warnings
 
 ## Backlog:
